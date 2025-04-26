@@ -14,3 +14,5 @@ export type Product = {
 export type Products = Product[];
 
 export type ProductsView = 'grid' | 'list';
+
+export type ProductFilters = 'categories' | 'prices';

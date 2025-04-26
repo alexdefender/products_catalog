@@ -6,6 +6,8 @@
   "PRICE_VALUE": "Price: {{value}}",
   "CATEGORY_VALUE": "Category: {{value}}",
   "RATING_VALUE": "Rating: {{value}}",
+  "FILTER_BY": "Filter by",
+  "CATEGORIES": "Categories",
 
   "META": {
     "DEFAULT": {

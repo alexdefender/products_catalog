@@ -3,15 +3,20 @@ import Stack from '@mui/material/Stack';
 
 import ProductsList from './ProductsList';
 import ViewToggle from './ViewToggle';
+import Filters from './Filters';
 
 const ProductsContainer: FC = (): JSX.Element => {
   return (
-    <Stack gap={2} flexDirection="column">
-      <Stack gap={2} justifyContent="flex-end">
-        <ViewToggle />
-      </Stack>
+    <Stack gap={2}>
+      <Filters />
 
-      <ProductsList />
+      <Stack gap={2} flexDirection="column">
+        <Stack gap={2} justifyContent="flex-end">
+          <ViewToggle />
+        </Stack>
+
+        <ProductsList />
+      </Stack>
     </Stack>
   );
 };
