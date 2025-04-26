@@ -1,5 +1,6 @@
 {
   "APP_NAME": "Products list",
+  "HOME": "Home",
   "PRODUCTS": "Products",
   "ERROR_OCCURRED": "Sorry an error occurred",
 
@@ -8,7 +9,7 @@
       "TITLE": "Products list",
       "DESCRIPTION": "Products list"
     },
-    "PRODUCTS_LIST": {
+    "PRODUCTS": {
       "TITLE": "Products list",
       "DESCRIPTION": "Products list"
     },

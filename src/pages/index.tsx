@@ -4,10 +4,11 @@ import { META_ID } from '@constants';
 import Head from './_head';
 import { JSX } from 'react';
 
+// before use, remove redirect from next.config.ts
 const HomePage = (): JSX.Element => (
   <Page>
-    <Head id={META_ID.PRODUCTS_LIST} />
-    <BaseLayout>Products list</BaseLayout>
+    <Head id={META_ID.HOME} />
+    <BaseLayout>Home page</BaseLayout>
   </Page>
 );
 
