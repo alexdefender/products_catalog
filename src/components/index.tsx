@@ -4,3 +4,5 @@ export { default as SafeText } from './common/text/SafeText';
 export { default as NotFound } from './common/NotFound';
 
 export { default as Header } from './Header';
+
+export { default as ProductsList } from './ProductsList';

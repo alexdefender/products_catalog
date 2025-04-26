@@ -1,0 +1,53 @@
+import { FC, JSX, useMemo, useCallback, MouseEvent } from 'react';
+import Stack, { StackProps } from '@mui/material/Stack';
+
+import { Products, ProductsView } from '@models/product';
+import { redirect } from '@utils/navigation';
+import ROUTES from '@constants/routes';
+import GridItem from './GridItem';
+import ListItem from './ListItem';
+import Loader from './Loader';
+
+type ProductsListProps = {
+  list: Products;
+  view: ProductsView;
+  isLoading: boolean;
+};
+
+const ProductsList: FC<ProductsListProps> = ({ list = [], view, isLoading }): JSX.Element => {
+  const ItemComponent = useMemo(() => (view === 'list' ? ListItem : GridItem), [view]);
+
+  const wrapProps: StackProps = useMemo(() => {
+    if (view === 'list') {
+      return { flexDirection: 'column' };
+    }
+
+    return {
+      flexWrap: 'wrap',
+      justifyContent: 'center',
+    };
+  }, [view]);
+
+  const handleClick = useCallback(
+    (id: string) => (e: MouseEvent<HTMLElement>) => {
+      e.preventDefault();
+      e.stopPropagation();
+      redirect(ROUTES.PRODUCT_DETAILS(id));
+    },
+    [],
+  );
+
+  if (isLoading) {
+    return <Loader />;
+  }
+
+  return (
+    <Stack gap={2} {...wrapProps}>
+      {list.map((item) => (
+        <ItemComponent key={item.id} {...item} onClick={handleClick(item.id)} />
+      ))}
+    </Stack>
+  );
+};
+
+export default ProductsList;
