@@ -27,7 +27,7 @@ export type ProductItemProps = {
   onClick: (e: MouseEvent<HTMLElement>) => void;
 } & Product;
 
-const GridProductItem: FC<ProductItemProps> = ({ image, title, price, onClick }): JSX.Element => (
+const GridProductItem: FC<ProductItemProps> = ({ image, title, price, rating, onClick }): JSX.Element => (
   <Card
     sx={{ display: 'flex', flexDirection: 'column', maxWidth: 250, width: '100%', cursor: 'pointer' }}
     onClick={onClick}
@@ -38,6 +38,7 @@ const GridProductItem: FC<ProductItemProps> = ({ image, title, price, onClick })
     <Stack gap={1} flexDirection="column" p={2} flex={1}>
       <SafeText content={title} component="p" variant="h6" flex={1} />
       <Text tid="PRICE_VALUE" values={{ value: price }} component="p" variant="h6" />
+      <Text tid="RATING_VALUE" values={{ value: rating.rate }} component="p" />
     </Stack>
   </Card>
 );

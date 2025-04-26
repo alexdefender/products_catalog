@@ -48,7 +48,7 @@ const ProductDetails: FC<ProductDetailsProps> = ({ product, isLoading }): JSX.El
           color={theme.palette.grey[500]}
           fontWeight={600}
         />
-        <Text tid="RATING_VALUE" values={{ value: rating?.rate }} component="p" />
+        <Text tid="RATING_VALUE" values={{ value: rating.rate }} component="p" />
       </Stack>
       <Text
         tid="PRICE_VALUE"
