@@ -1,0 +1,24 @@
+{
+  "APP_NAME": "Products list",
+  "PRODUCTS": "Products",
+  "ERROR_OCCURRED": "Sorry an error occurred",
+
+  "META": {
+    "DEFAULT": {
+      "TITLE": "Products list",
+      "DESCRIPTION": "Products list"
+    },
+    "PRODUCTS_LIST": {
+      "TITLE": "Products list",
+      "DESCRIPTION": "Products list"
+    },
+    "PRODUCT_DETAILS": {
+      "TITLE": "Product details",
+      "DESCRIPTION": "Product details"
+    },
+    "NOT_FOUND": {
+      "TITLE": "404",
+      "DESCRIPTION": "404"
+    }
+  }
+}

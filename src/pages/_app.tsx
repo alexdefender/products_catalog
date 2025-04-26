@@ -1,6 +1,20 @@
-import "@/styles/globals.css";
-import type { AppProps } from "next/app";
+import React, { JSX } from 'react';
+import { AppProps } from 'next/app';
 
-export default function App({ Component, pageProps }: AppProps) {
-  return <Component {...pageProps} />;
-}
+import '@services/i18n';
+import StoreProvider from '@containers/StoreProvider';
+import ThemeProvider from '@containers/ThemeProvider';
+
+type MyAppProps = {
+  pageProps: object;
+} & AppProps;
+
+const MyApp = ({ Component, pageProps }: MyAppProps): JSX.Element => (
+  <StoreProvider>
+    <ThemeProvider>
+      <Component {...pageProps} />
+    </ThemeProvider>
+  </StoreProvider>
+);
+
+export default MyApp;
