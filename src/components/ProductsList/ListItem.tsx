@@ -25,7 +25,7 @@ const Image = styled('img')({
 });
 
 const ProductListItem: FC<ProductItemProps> = ({ image, title, price, rating, onClick }): JSX.Element => (
-  <Card sx={{ display: 'flex', width: '100%', cursor: 'pointer', height: 100 }} onClick={onClick}>
+  <Card sx={{ display: 'flex', width: '100%', cursor: 'pointer' }} onClick={onClick}>
     <ImagWrap>
       <Image src={image} alt="" />
     </ImagWrap>
