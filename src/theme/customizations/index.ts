@@ -5,7 +5,9 @@ import StackCustomization from './Stack';
 import SkeletonCustomization from './Skeleton';
 import ButtonBaseCustomization from './ButtonBase';
 import DialogCustomization from './Dialog';
+import DialogActionsCustomization from './DialogActions';
 import SliderCustomization from './Slider';
+import ButtonCustomization from './Button';
 
 const componentsCustomizations = {
   ...TypographyCustomization,
@@ -15,7 +17,9 @@ const componentsCustomizations = {
   ...SkeletonCustomization,
   ...ButtonBaseCustomization,
   ...DialogCustomization,
+  ...DialogActionsCustomization,
   ...SliderCustomization,
+  ...ButtonCustomization,
 };
 
 export default componentsCustomizations;

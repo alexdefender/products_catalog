@@ -9,6 +9,8 @@
   "FILTER_BY": "Filter by",
   "CATEGORIES": "Categories",
   "PRICES": "Prices",
+  "OK": "Ok",
+  "EMPTY_PRODUCTS_LIST": "Nothing found. Change filters or refresh page",
 
   "META": {
     "DEFAULT": {

@@ -7,6 +7,7 @@ import ROUTES from '@constants/routes';
 import GridItem from './GridItem';
 import ListItem from './ListItem';
 import Loader from './Loader';
+import Text from '../common/text/Text';
 
 type ProductsListProps = {
   list: Products;
@@ -15,6 +16,7 @@ type ProductsListProps = {
 };
 
 const ProductsList: FC<ProductsListProps> = ({ list = [], view, isLoading }): JSX.Element => {
+  const isEmpty = list.length === 0;
   const ItemComponent = useMemo(() => (view === 'list' ? ListItem : GridItem), [view]);
 
   const wrapProps: StackProps = useMemo(() => {
@@ -22,10 +24,7 @@ const ProductsList: FC<ProductsListProps> = ({ list = [], view, isLoading }): JS
       return { flexDirection: 'column' };
     }
 
-    return {
-      flexWrap: 'wrap',
-      justifyContent: 'center',
-    };
+    return { flexWrap: 'wrap' };
   }, [view]);
 
   const handleClick = useCallback(
@@ -46,6 +45,7 @@ const ProductsList: FC<ProductsListProps> = ({ list = [], view, isLoading }): JS
       {list.map((item) => (
         <ItemComponent key={item.id} {...item} onClick={handleClick(item.id)} />
       ))}
+      {isEmpty && <Text tid="EMPTY_PRODUCTS_LIST" component="div" variant="h5" margin="auto" />}
     </Stack>
   );
 };

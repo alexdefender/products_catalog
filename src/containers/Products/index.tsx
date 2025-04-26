@@ -7,10 +7,10 @@ import Filters from './Filters';
 
 const ProductsContainer: FC = (): JSX.Element => {
   return (
-    <Stack gap={2}>
+    <Stack gap={5}>
       <Filters variant="list" />
 
-      <Stack gap={2} flexDirection="column">
+      <Stack gap={2} flexDirection="column" width="100%">
         <Stack gap={2} justifyContent="flex-end">
           <Filters variant="dialog" />
           <ViewToggle />
