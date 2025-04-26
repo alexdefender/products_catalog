@@ -6,7 +6,7 @@ import Box from '@mui/material/Box';
 import MenuIcon from '@mui/icons-material/Menu';
 
 import MenuItem from './MenuItem';
-import CloseButton from '../../common/buttons/CloseButton';
+import IconButton from '../../common/buttons/IconButton';
 import { HeaderMenuProps } from '.';
 
 const StyledList = styled('ul')(({ theme }) => ({
@@ -36,7 +36,7 @@ const HeaderMobileMenu: FC<HeaderMenuProps> = ({ menu }): JSX.Element => {
               mb: 1,
             }}
           >
-            <CloseButton onClick={toggleDrawer(false)} />
+            <IconButton icon="close" onClick={toggleDrawer(false)} />
           </Box>
           <nav>
             <StyledList>

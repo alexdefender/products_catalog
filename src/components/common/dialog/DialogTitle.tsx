@@ -2,7 +2,7 @@ import { FC, JSX } from 'react';
 import DialogTitle from '@mui/material/DialogTitle';
 
 import Text from '../text/Text';
-import CloseButton from '../buttons/CloseButton';
+import IconButton from '../buttons/IconButton';
 
 type DialogTitleComponentProps = {
   title?: string;
@@ -16,7 +16,7 @@ const DialogTitleComponent: FC<DialogTitleComponentProps> = ({ title, tValues = 
     {title && (
       <Text component="h2" variant="h5" tid={title} values={tValues} fontWeight={600} align="center" color={color} />
     )}
-    {onClose && <CloseButton onClick={onClose} sx={{ position: 'absolute', top: 12, right: 12 }} />}
+    {onClose && <IconButton icon="close" onClick={onClose} sx={{ position: 'absolute', top: 12, right: 12 }} />}
   </DialogTitle>
 );
 

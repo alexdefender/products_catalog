@@ -3,7 +3,7 @@ import Stack from '@mui/material/Stack';
 
 import useActions from '@hooks/useActions';
 import { DIALOGS } from '@constants/index';
-import { FilterButton, Text } from '@components';
+import { IconButton, Text } from '@components';
 import CategoriesFilter from './CategoriesFilter';
 import PricesFilter from './PricesFilter';
 
@@ -26,7 +26,9 @@ const ProductsFiltersContainer: FC<ProductsFiltersContainerProps> = ({ variant }
 
     case 'dialog':
       return (
-        <FilterButton
+        <IconButton
+          icon="filter"
+          size="large"
           sx={{ display: { xs: 'flex', md: 'none' } }}
           onClick={(e) => {
             e.stopPropagation();
