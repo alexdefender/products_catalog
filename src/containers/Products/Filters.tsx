@@ -1,14 +1,41 @@
-import { FC, JSX } from 'react';
+import { FC, JSX, Fragment } from 'react';
 import Stack from '@mui/material/Stack';
 
+import useActions from '@hooks/useActions';
+import { DIALOGS } from '@constants/index';
+import { FilterButton, Text } from '@components';
 import CategoriesFilter from './CategoriesFilter';
 
-const ProductsFiltersContainer: FC = (): JSX.Element => {
-  return (
-    <Stack gap={2} flexDirection="column" minWidth={250}>
-      <CategoriesFilter />
-    </Stack>
-  );
+type ProductsFiltersContainerProps = {
+  variant: 'list' | 'dialog';
+};
+
+const ProductsFiltersContainer: FC<ProductsFiltersContainerProps> = ({ variant }): JSX.Element => {
+  const { openDialog } = useActions();
+
+  switch (variant) {
+    case 'list':
+      return (
+        <Stack gap={2} flexDirection="column" minWidth={250} sx={{ display: { xs: 'none', md: 'flex' } }}>
+          <Text tid="FILTER_BY" component="h5" variant="h5" />
+          <CategoriesFilter />
+        </Stack>
+      );
+
+    case 'dialog':
+      return (
+        <FilterButton
+          sx={{ display: { xs: 'flex', md: 'none' } }}
+          onClick={(e) => {
+            e.stopPropagation();
+            openDialog({ name: DIALOGS.PRODUCTS_FILTERS });
+          }}
+        />
+      );
+
+    default:
+      return <Fragment />;
+  }
 };
 
 export default ProductsFiltersContainer;

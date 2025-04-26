@@ -32,7 +32,7 @@ const CheckBoxesGroup: FC<CheckBoxesGroupProps> = ({ items, value, onChange, lab
 
   return (
     <FormControl>
-      <Text tid={label} variant="h5" />
+      <Text tid={label} variant="h6" />
       <FormGroup>
         {items.map((item) => (
           <Checkbox

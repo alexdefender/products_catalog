@@ -4,6 +4,7 @@ import ToolbarCustomization from './Toolbar';
 import StackCustomization from './Stack';
 import SkeletonCustomization from './Skeleton';
 import ButtonBaseCustomization from './ButtonBase';
+import DialogCustomization from './Dialog';
 
 const componentsCustomizations = {
   ...TypographyCustomization,
@@ -12,6 +13,7 @@ const componentsCustomizations = {
   ...StackCustomization,
   ...SkeletonCustomization,
   ...ButtonBaseCustomization,
+  ...DialogCustomization,
 };
 
 export default componentsCustomizations;

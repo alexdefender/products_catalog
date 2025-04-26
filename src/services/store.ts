@@ -3,6 +3,7 @@ import { configureStore } from '@reduxjs/toolkit';
 import { layoutReducer } from '@reducers/layoutReducer';
 import { productsReducer } from '@reducers/productsReducer';
 import { productReducer } from '@reducers/productReducer';
+import { dialogsReducer } from '@reducers/dialogsReducer';
 
 export const makeStore = () => {
   return configureStore({
@@ -10,6 +11,7 @@ export const makeStore = () => {
       layout: layoutReducer,
       products: productsReducer,
       product: productReducer,
+      dialogs: dialogsReducer,
     },
   });
 };

@@ -20,3 +20,7 @@ export const HEADER_MENU: Menu = [
     href: ROUTES.PRODUCTS,
   },
 ];
+
+export const DIALOGS = {
+  PRODUCTS_FILTERS: 'ProductsFiltersDialog',
+} as const;

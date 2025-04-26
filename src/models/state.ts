@@ -1,5 +1,5 @@
 import { PaletteMode } from '@mui/material/styles';
-import { CheckBoxesGroupProps} from '@components';
+import { CheckBoxesGroupProps } from '@components';
 import { Product, Products, ProductsView } from './product';
 
 export type LayoutState = {
@@ -23,4 +23,13 @@ export type ProductState = {
   isLoading: boolean;
   hasData: boolean;
   error: string;
+};
+
+export type DialogState = {
+  isOpen: boolean;
+  data: object;
+};
+
+export type DialogsState = {
+  [keys: string]: DialogState;
 };
