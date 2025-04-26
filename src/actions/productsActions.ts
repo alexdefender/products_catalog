@@ -4,9 +4,9 @@ import { productsActions } from '@reducers/productsReducer';
 import { ProductsDto } from '@models/api/product';
 import { API_URLS } from '@constants/api';
 
-const { getProductsStart, getProductsSuccess, getProductsError, resetProductsState } = productsActions;
+const { getProductsStart, getProductsSuccess, getProductsError, setProductsView, resetProductsState } = productsActions;
 
-export { resetProductsState };
+export { setProductsView, resetProductsState };
 
 export const getProducts = () => async (dispatch: AppDispatch, getState: () => RootState) => {
   const { isLoading } = getState().products;

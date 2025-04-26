@@ -3,6 +3,7 @@ import ContainerCustomization from './Container';
 import ToolbarCustomization from './Toolbar';
 import StackCustomization from './Stack';
 import SkeletonCustomization from './Skeleton';
+import ButtonBaseCustomization from './ButtonBase';
 
 const componentsCustomizations = {
   ...TypographyCustomization,
@@ -10,6 +11,7 @@ const componentsCustomizations = {
   ...ToolbarCustomization,
   ...StackCustomization,
   ...SkeletonCustomization,
+  ...ButtonBaseCustomization,
 };
 
 export default componentsCustomizations;

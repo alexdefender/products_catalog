@@ -4,7 +4,7 @@ import useTypedSelector from '@hooks/useTypedSelector';
 import useActions from '@hooks/useActions';
 import { ProductsList } from '@components';
 
-const ProductsContainer: FC = (): JSX.Element => {
+const ProductsListContainer: FC = (): JSX.Element => {
   const { list, isLoading, hasData, view } = useTypedSelector((state) => state.products);
   const { getProducts } = useActions();
 
@@ -15,4 +15,4 @@ const ProductsContainer: FC = (): JSX.Element => {
   return <ProductsList list={list} view={view} isLoading={!hasData || isLoading} />;
 };
 
-export default ProductsContainer;
+export default ProductsListContainer;
