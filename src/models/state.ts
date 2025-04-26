@@ -14,7 +14,7 @@ export type ProductsState = {
   view: ProductsView;
   filters: {
     categories: CheckBoxesGroupProps['items'];
-    prices: [];
+    prices: number[];
   };
 };
 

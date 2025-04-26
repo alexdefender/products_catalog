@@ -17,7 +17,12 @@ const ProductsListContainer: FC = (): JSX.Element => {
 
     if (filters.categories.length) {
       const selectedCategories = filters.categories.map((c) => c.value);
-      res = list.filter((item) => selectedCategories.includes(item.category));
+      res = res.filter((item) => selectedCategories.includes(item.category));
+    }
+
+    if (filters.prices.length) {
+      const [min, max] = filters.prices;
+      res = res.filter((item) => item.price >= min && item.price <= max);
     }
 
     return res;
