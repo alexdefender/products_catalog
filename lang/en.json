@@ -3,6 +3,9 @@
   "HOME": "Home",
   "PRODUCTS": "Products",
   "ERROR_OCCURRED": "Sorry an error occurred",
+  "PRICE_VALUE": "Price: {{value}}",
+  "CATEGORY_VALUE": "Category: {{value}}",
+  "RATING_VALUE": "Rating: {{value}}",
 
   "META": {
     "DEFAULT": {

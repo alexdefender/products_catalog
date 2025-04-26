@@ -6,6 +6,7 @@ export const MAIN_CONTENT_ID = 'main-content';
 export const META_ID = {
   HOME: 'HOME',
   PRODUCTS: 'PRODUCTS',
+  PRODUCT_DETAILS: 'PRODUCT_DETAILS',
   NOT_FOUND: 'NOT_FOUND',
 };
 

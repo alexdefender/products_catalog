@@ -4,6 +4,7 @@ import Card from '@mui/material/Card';
 import Stack from '@mui/material/Stack';
 
 import SafeText from '../common/text/SafeText';
+import Text from '../common/text/Text';
 import { ProductItemProps } from './GridItem';
 
 const ImagWrap = styled('div')({
@@ -29,7 +30,7 @@ const ProductListItem: FC<ProductItemProps> = ({ image, title, price, onClick })
     </ImagWrap>
     <Stack gap={1} p={2} flex={1}>
       <SafeText content={title} component="p" variant="h6" flex={1} />
-      <SafeText content={`Price: ${price}`} component="p" variant="h6" />
+      <Text tid="PRICE_VALUE" values={{ value: price }} component="p" variant="h6" />
     </Stack>
   </Card>
 );

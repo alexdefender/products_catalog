@@ -10,9 +10,9 @@ const ProductsContainer: FC = (): JSX.Element => {
 
   useEffect(() => {
     if (!hasData) getProducts();
-  }, []);
+  }, [hasData]);
 
-  return <ProductsList list={list} view={view} isLoading={isLoading} />;
+  return <ProductsList list={list} view={view} isLoading={!hasData || isLoading} />;
 };
 
 export default ProductsContainer;
