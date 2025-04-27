@@ -18,13 +18,13 @@ const Basket: FC<BasketProps> = ({ items = [], ItemActionsProps, onDeleteAll }):
   const totalPrice = useMemo(() => getTotalPrice(items), [items]);
 
   return (
-    <Stack gap={2} flexDirection="column">
+    <Stack gap={2} flexDirection="column" width="100%">
       {items.map((item) => (
         <BasketItem key={item.id} {...item} {...ItemActionsProps} />
       ))}
       {isEmpty && <Text tid="EMPTY_BASKET" component="div" variant="h5" margin="auto" />}
       {!isEmpty && (
-        <Fragment>
+        <Stack gap={2} flexDirection="column" alignItems="end">
           <Text
             tid="TOTAL_PRICE_VALUE"
             values={{ value: totalPrice.toFixed(2) }}
@@ -39,7 +39,7 @@ const Basket: FC<BasketProps> = ({ items = [], ItemActionsProps, onDeleteAll }):
               onDeleteAll();
             }}
           />
-        </Fragment>
+        </Stack>
       )}
     </Stack>
   );

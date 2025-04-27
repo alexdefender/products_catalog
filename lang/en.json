@@ -24,6 +24,16 @@
   "CLEAR_BASKET": "Clear basket",
   "CONTINUE_SHOPPING": "Continue shopping",
   "PLACE_AN_ORDER": "Place an order",
+  "NAME": "Name",
+  "EMAIL": "Email",
+  "PHONE_NUMBER": "Phone number",
+  "ORDER": "Order",
+  "RECIPIENT": "Recipient",
+
+  "VALIDATION_REQUIRED": "Required",
+  "VALIDATION_MIN_LENGTH_STR": "Enter more than {{min}} symbols",
+  "VALIDATION_EMAIL": "Please enter correct email address",
+  "VALIDATION_PHONE_NUMBER": "Please enter correct format",
 
   "META": {
     "DEFAULT": {
@@ -37,6 +47,10 @@
     "PRODUCT_DETAILS": {
       "TITLE": "Product details",
       "DESCRIPTION": "Product details"
+    },
+    "CHECKOUT": {
+      "TITLE": "Checkout",
+      "DESCRIPTION": "Checkout"
     },
     "NOT_FOUND": {
       "TITLE": "404",

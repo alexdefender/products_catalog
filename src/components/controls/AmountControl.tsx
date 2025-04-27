@@ -18,7 +18,7 @@ const AmountControl: FC<AmountControlProps> = ({ value, onChange }): JSX.Element
   return (
     <FormControl sx={{ flexDirection: 'row', gap: 1 }}>
       <IconButton icon="remove" onClick={handleChange('remove')} disabled={value <= 1} />
-      <TextField value={value} sx={{ width: 50, '& input': { textAlign: 'center' } }} />
+      <TextField value={value} sx={{ width: 50, '& input': { p: 0.5, textAlign: 'center' } }} />
       <IconButton icon="add" onClick={handleChange('add')} />
     </FormControl>
   );

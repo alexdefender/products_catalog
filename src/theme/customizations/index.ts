@@ -9,7 +9,6 @@ import DialogActionsCustomization from './DialogActions';
 import SliderCustomization from './Slider';
 import ButtonCustomization from './Button';
 import SelectCustomization from './Select';
-import InputBaseCustomization from './InputBase';
 
 const componentsCustomizations = {
   ...TypographyCustomization,
@@ -23,7 +22,6 @@ const componentsCustomizations = {
   ...SliderCustomization,
   ...ButtonCustomization,
   ...SelectCustomization,
-  ...InputBaseCustomization,
 };
 
 export default componentsCustomizations;
