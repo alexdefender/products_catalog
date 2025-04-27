@@ -9,13 +9,15 @@ import HeaderMobileMenu from './HeaderMenu/MobileMenu';
 type HeaderProps = {
   menu: Menu;
   renderThemeToggle: ReactNode;
+  renderBasket: ReactNode;
 };
 
-const Header: FC<HeaderProps> = ({ menu, renderThemeToggle }): JSX.Element => (
+const Header: FC<HeaderProps> = ({ menu, renderThemeToggle, renderBasket }): JSX.Element => (
   <AppBar>
     <Toolbar>
       <HeaderMenu menu={menu} />
       {renderThemeToggle}
+      {renderBasket}
       <HeaderMobileMenu menu={menu} />
     </Toolbar>
   </AppBar>

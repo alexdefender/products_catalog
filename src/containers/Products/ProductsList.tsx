@@ -7,7 +7,7 @@ import { ProductsList } from '@components';
 
 const ProductsListContainer: FC = (): JSX.Element => {
   const { list, isLoading, hasData, view, filters, sorting } = useAppSelector((state) => state.products);
-  const { getProducts } = useActions();
+  const { getProducts, addBasketItem } = useActions();
 
   useEffect(() => {
     if (!hasData) getProducts();
@@ -20,7 +20,9 @@ const ProductsListContainer: FC = (): JSX.Element => {
     return sortedList;
   }, [list, filters, sorting]);
 
-  return <ProductsList list={correctList} view={view} isLoading={!hasData || isLoading} />;
+  return (
+    <ProductsList list={correctList} view={view} isLoading={!hasData || isLoading} onAddToBasket={addBasketItem} />
+  );
 };
 
 export default ProductsListContainer;

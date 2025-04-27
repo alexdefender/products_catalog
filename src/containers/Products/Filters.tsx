@@ -2,7 +2,6 @@ import { FC, JSX, Fragment } from 'react';
 import Stack from '@mui/material/Stack';
 
 import useActions from '@hooks/useActions';
-import { DIALOGS } from '@constants/index';
 import { IconButton, Text } from '@components';
 import CategoriesFilter from './CategoriesFilter';
 import PricesFilter from './PricesFilter';
@@ -32,7 +31,7 @@ const ProductsFiltersContainer: FC<ProductsFiltersContainerProps> = ({ variant }
           sx={{ display: { xs: 'flex', md: 'none' } }}
           onClick={(e) => {
             e.stopPropagation();
-            openDialog({ name: DIALOGS.PRODUCTS_FILTERS });
+            openDialog({ name: 'ProductsFiltersDialog' });
           }}
         />
       );

@@ -4,6 +4,7 @@
   "PRODUCTS": "Products",
   "ERROR_OCCURRED": "Sorry an error occurred",
   "PRICE_VALUE": "Price: {{value}}",
+  "TOTAL_PRICE_VALUE": "Total price: {{value}}",
   "CATEGORY_VALUE": "Category: {{value}}",
   "RATING_VALUE": "Rating: {{value}}",
   "FILTER_BY": "Filter by",
@@ -18,6 +19,11 @@
   "RATING_DESC": "Rating: High to Low",
   "OK": "Ok",
   "EMPTY_PRODUCTS_LIST": "Nothing found. Change filters or refresh page",
+  "BASKET": "Basket",
+  "EMPTY_BASKET": "Basket is empty",
+  "CLEAR_BASKET": "Clear basket",
+  "CONTINUE_SHOPPING": "Continue shopping",
+  "PLACE_AN_ORDER": "Place an order",
 
   "META": {
     "DEFAULT": {

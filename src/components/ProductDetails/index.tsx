@@ -7,6 +7,7 @@ import { Product } from '@models/product';
 import SafeText from '../common/text/SafeText';
 import Text from '../common/text/Text';
 import Loader from './Loader';
+import BasketButton from '../common/buttons/BasketButton';
 
 const ImagWrap = styled('div')(({ theme }) => ({
   display: 'flex',
@@ -26,9 +27,10 @@ const Image = styled('img')({
 type ProductDetailsProps = {
   product: Product;
   isLoading: boolean;
+  onAddToBasket: (product: Product) => void;
 };
 
-const ProductDetails: FC<ProductDetailsProps> = ({ product, isLoading }): JSX.Element => {
+const ProductDetails: FC<ProductDetailsProps> = ({ product, isLoading, onAddToBasket }): JSX.Element => {
   const theme = useTheme();
 
   if (isLoading) {
@@ -50,14 +52,17 @@ const ProductDetails: FC<ProductDetailsProps> = ({ product, isLoading }): JSX.El
         />
         <Text tid="RATING_VALUE" values={{ value: rating.rate }} component="p" />
       </Stack>
-      <Text
-        tid="PRICE_VALUE"
-        values={{ value: price }}
-        component="p"
-        variant="h3"
-        fontWeight={700}
-        color={theme.palette.success.main}
-      />
+      <Stack gap={2} justifyContent="space-between">
+        <Text
+          tid="PRICE_VALUE"
+          values={{ value: price }}
+          component="p"
+          variant="h3"
+          fontWeight={700}
+          color={theme.palette.primary.dark}
+        />
+        <BasketButton onClick={() => onAddToBasket(product)} />
+      </Stack>
       <ImagWrap>
         <Image src={image} alt="" />
       </ImagWrap>

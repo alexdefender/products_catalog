@@ -7,7 +7,7 @@ import { ProductDetails } from '@components';
 
 const ProductDetailsContainer: FC = (): JSX.Element => {
   const { data, isLoading, hasData } = useAppSelector((state) => state.product);
-  const { getProduct, resetProductState } = useActions();
+  const { getProduct, resetProductState, addBasketItem } = useActions();
   const params = useParams();
 
   useEffect(() => {
@@ -18,7 +18,7 @@ const ProductDetailsContainer: FC = (): JSX.Element => {
     };
   }, [hasData, params?.id]);
 
-  return <ProductDetails product={data} isLoading={!hasData || isLoading} />;
+  return <ProductDetails product={data} isLoading={!hasData || isLoading} onAddToBasket={addBasketItem} />;
 };
 
 export default ProductDetailsContainer;

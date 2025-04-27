@@ -9,9 +9,6 @@ const SelectCustomization: Components<Theme> = {
       root: {
         minWidth: 200,
       },
-      select: ({ theme }) => ({
-        padding: theme.spacing(1, 1.5),
-      }),
     },
   },
 };

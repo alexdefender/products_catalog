@@ -1,5 +1,6 @@
 import { PaletteMode } from '@mui/material/styles';
 import { Product, ProductFilters, Products, ProductsView, SortingItem } from './product';
+import { BasketItem } from './basket';
 
 export type LayoutState = {
   mode: PaletteMode;
@@ -29,4 +30,8 @@ export type DialogState = {
 
 export type DialogsState = {
   [keys: string]: DialogState;
+};
+
+export type BasketState = {
+  items: BasketItem[];
 };

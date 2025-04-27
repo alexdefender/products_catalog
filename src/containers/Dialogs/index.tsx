@@ -4,18 +4,24 @@ import { Breakpoint } from '@mui/system';
 
 import { DIALOGS } from '@constants';
 import ProductsFiltersDialog, { ProductsFiltersDialogProps } from './ProductsFiltersDialog';
+import BasketDialog, { BasketDialogProps } from './BasketDialog';
 import useAppSelector from '@hooks/useAppSelector';
 import useActions from '@hooks/useActions';
 
 const DIALOG_COMPONENTS = {
   [DIALOGS.PRODUCTS_FILTERS]: ProductsFiltersDialog,
+  [DIALOGS.BASKET]: BasketDialog,
 };
 
 export type DialogDataMap = {
   [DIALOGS.PRODUCTS_FILTERS]: Omit<ProductsFiltersDialogProps, 'onClose'>;
+  [DIALOGS.BASKET]: Omit<BasketDialogProps, 'onClose'>;
 };
 
-const MEDIA_SIZE: { [keys: string]: Breakpoint } = {};
+const MEDIA_SIZE: { [keys: string]: Breakpoint } = {
+  [DIALOGS.BASKET]: 'sm',
+
+};
 
 const FULL_SCREEN: { [keys: string]: boolean } = {};
 

@@ -4,7 +4,7 @@ import Stack, { StackProps } from '@mui/material/Stack';
 import { Products, ProductsView } from '@models/product';
 import { redirect } from '@utils/navigation';
 import ROUTES from '@constants/routes';
-import GridItem from './GridItem';
+import GridItem, { ProductItemProps } from './GridItem';
 import ListItem from './ListItem';
 import Loader from './Loader';
 import Text from '../common/text/Text';
@@ -13,9 +13,9 @@ type ProductsListProps = {
   list: Products;
   view: ProductsView;
   isLoading: boolean;
-};
+} & Pick<ProductItemProps, 'onAddToBasket'>;
 
-const ProductsList: FC<ProductsListProps> = ({ list = [], view, isLoading }): JSX.Element => {
+const ProductsList: FC<ProductsListProps> = ({ list = [], view, isLoading, onAddToBasket }): JSX.Element => {
   const isEmpty = list.length === 0;
   const ItemComponent = useMemo(() => (view === 'list' ? ListItem : GridItem), [view]);
 
@@ -43,7 +43,7 @@ const ProductsList: FC<ProductsListProps> = ({ list = [], view, isLoading }): JS
   return (
     <Stack gap={2} {...wrapProps}>
       {list.map((item) => (
-        <ItemComponent key={item.id} {...item} onClick={handleClick(item.id)} />
+        <ItemComponent key={item.id} product={item} onClick={handleClick(item.id)} onAddToBasket={onAddToBasket} />
       ))}
       {isEmpty && <Text tid="EMPTY_PRODUCTS_LIST" component="div" variant="h5" margin="auto" />}
     </Stack>

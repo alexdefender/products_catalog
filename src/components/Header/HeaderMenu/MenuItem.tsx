@@ -1,6 +1,5 @@
 import { FC, JSX, memo } from 'react';
 import { usePathname } from 'next/navigation';
-
 import Link from 'next/link';
 import { useTheme } from '@mui/material/styles';
 
