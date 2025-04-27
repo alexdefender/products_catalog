@@ -1,7 +1,6 @@
 import { FC, JSX, memo } from 'react';
 import { styled } from '@mui/material/styles';
 import Card from '@mui/material/Card';
-import Box from '@mui/material/Box';
 import Stack from '@mui/material/Stack';
 
 import { BasketItem as BasketItemType } from '@models/basket';

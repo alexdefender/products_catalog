@@ -1,4 +1,4 @@
-import { FC, Fragment, JSX, useMemo } from 'react';
+import { FC, JSX, useMemo } from 'react';
 import Stack from '@mui/material/Stack';
 
 import { BasketItem as BasketItemType } from '@models/basket';
