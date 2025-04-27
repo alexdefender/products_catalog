@@ -4,7 +4,7 @@ import { Breakpoint } from '@mui/system';
 
 import { DIALOGS } from '@constants';
 import ProductsFiltersDialog, { ProductsFiltersDialogProps } from './ProductsFiltersDialog';
-import useAppSelector from '@hooks/useTypedSelector';
+import useAppSelector from '@hooks/useAppSelector';
 import useActions from '@hooks/useActions';
 
 const DIALOG_COMPONENTS = {

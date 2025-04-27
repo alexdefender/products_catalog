@@ -1,11 +1,12 @@
 import { FC, JSX, useEffect, useMemo } from 'react';
 
-import useTypedSelector from '@hooks/useTypedSelector';
+import useAppSelector from '@hooks/useAppSelector';
 import useActions from '@hooks/useActions';
+import { getFilteredProductsList, getSortedProductsList } from '@utils/product';
 import { ProductsList } from '@components';
 
 const ProductsListContainer: FC = (): JSX.Element => {
-  const { list, isLoading, hasData, view, filters } = useTypedSelector((state) => state.products);
+  const { list, isLoading, hasData, view, filters, sorting } = useAppSelector((state) => state.products);
   const { getProducts } = useActions();
 
   useEffect(() => {
@@ -13,20 +14,11 @@ const ProductsListContainer: FC = (): JSX.Element => {
   }, [hasData]);
 
   const correctList = useMemo(() => {
-    let res = list;
+    const filteredList = getFilteredProductsList(list, filters);
+    const sortedList = getSortedProductsList(filteredList, sorting);
 
-    if (filters.categories.length) {
-      const selectedCategories = filters.categories.map((c) => c.value);
-      res = res.filter((item) => selectedCategories.includes(item.category));
-    }
-
-    if (filters.prices.length) {
-      const [min, max] = filters.prices;
-      res = res.filter((item) => item.price >= min && item.price <= max);
-    }
-
-    return res;
-  }, [list, filters]);
+    return sortedList;
+  }, [list, filters, sorting]);
 
   return <ProductsList list={correctList} view={view} isLoading={!hasData || isLoading} />;
 };

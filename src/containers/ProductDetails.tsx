@@ -1,12 +1,12 @@
 import { FC, JSX, useEffect } from 'react';
 import { useParams } from 'next/navigation';
 
-import useTypedSelector from '@hooks/useTypedSelector';
+import useAppSelector from '@hooks/useAppSelector';
 import useActions from '@hooks/useActions';
 import { ProductDetails } from '@components';
 
 const ProductDetailsContainer: FC = (): JSX.Element => {
-  const { data, isLoading, hasData } = useTypedSelector((state) => state.product);
+  const { data, isLoading, hasData } = useAppSelector((state) => state.product);
   const { getProduct, resetProductState } = useActions();
   const params = useParams();
 

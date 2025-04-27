@@ -29,7 +29,6 @@ const productSlice = createSlice({
       state.error = action.payload;
       state.isLoading = false;
     },
-
     resetProductState() {
       return { ...initialState };
     },

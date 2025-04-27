@@ -14,3 +14,4 @@ export { default as CheckBoxesGroup } from './controls/CheckBoxesGroup';
 export type { CheckBoxesGroupProps } from './controls/CheckBoxesGroup';
 export { default as RangeSlider } from './controls/RangeSlider';
 export type { RangeSliderProps } from './controls/RangeSlider';
+export { default as Select } from './controls/Select';

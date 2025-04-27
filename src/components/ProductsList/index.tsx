@@ -24,7 +24,7 @@ const ProductsList: FC<ProductsListProps> = ({ list = [], view, isLoading }): JS
       return { flexDirection: 'column' };
     }
 
-    return { flexWrap: 'wrap' };
+    return { flexWrap: 'wrap', justifyContent: { xs: 'center', md: 'flex-start' } };
   }, [view]);
 
   const handleClick = useCallback(

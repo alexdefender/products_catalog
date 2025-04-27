@@ -1,11 +1,11 @@
 import { FC, JSX, MouseEvent } from 'react';
 
-import useTypedSelector from '@hooks/useTypedSelector';
+import useAppSelector from '@hooks/useAppSelector';
 import useActions from '@hooks/useActions';
 import { IconButton } from '@components';
 
 const ProductsListViewToggleContainer: FC = (): JSX.Element => {
-  const { view } = useTypedSelector((state) => state.products);
+  const { view } = useAppSelector((state) => state.products);
   const { setProductsView } = useActions();
 
   const handleClick = (e: MouseEvent<HTMLElement>) => {

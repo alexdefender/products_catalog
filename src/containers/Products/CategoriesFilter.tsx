@@ -1,15 +1,16 @@
 import { FC, Fragment, JSX, useMemo } from 'react';
 
-import useTypedSelector from '@hooks/useTypedSelector';
+import useAppSelector from '@hooks/useAppSelector';
 import useActions from '@hooks/useActions';
-import { CheckBoxesGroup, CheckBoxesGroupProps } from '@components';
+import { Value } from '@models';
+import { CheckBoxesGroup } from '@components';
 
 const CategoriesFilter: FC = (): JSX.Element => {
   const {
     list,
     hasData,
     filters: { categories },
-  } = useTypedSelector((state) => state.products);
+  } = useAppSelector((state) => state.products);
   const { setProductFilter } = useActions();
 
   const items = useMemo(() => {
@@ -22,7 +23,7 @@ const CategoriesFilter: FC = (): JSX.Element => {
     return <Fragment />;
   }
 
-  const handleChange = (value: CheckBoxesGroupProps['value']) => {
+  const handleChange = (value: Value[]) => {
     setProductFilter({ filter: 'categories', value });
   };
 

@@ -3,7 +3,7 @@ import { ThemeProvider as MuiThemeProvider, createTheme } from '@mui/material/st
 import CssBaseline from '@mui/material/CssBaseline';
 
 import getAppTheme from '@theme/getAppTheme';
-import useAppSelector from '@hooks/useTypedSelector';
+import useAppSelector from '@hooks/useAppSelector';
 
 type ThemeProviderProps = {
   children: ReactNode;

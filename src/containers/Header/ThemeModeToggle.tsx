@@ -1,11 +1,11 @@
 import { FC, JSX, MouseEvent } from 'react';
 
-import useTypedSelector from '@hooks/useTypedSelector';
+import useAppSelector from '@hooks/useAppSelector';
 import useActions from '@hooks/useActions';
 import { IconButton } from '@components';
 
 const ThemeModeToggleContainer: FC = (): JSX.Element => {
-  const { mode } = useTypedSelector((state) => state.layout);
+  const { mode } = useAppSelector((state) => state.layout);
   const { setLayoutMode } = useActions();
 
   const handleClick = (e: MouseEvent<HTMLElement>) => {

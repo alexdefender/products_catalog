@@ -3,7 +3,7 @@ import { createSlice, PayloadAction } from '@reduxjs/toolkit';
 import { ProductsState } from '@models/state';
 import { prepareProducts } from '@utils/api/product';
 import { ProductsDto } from '@models/api/product';
-import { ProductFilters } from '@models/product';
+import { ProductFiltersValue } from '@models/product';
 
 const initialState: ProductsState = {
   list: [],
@@ -14,6 +14,10 @@ const initialState: ProductsState = {
   filters: {
     categories: [],
     prices: [],
+  },
+  sorting: {
+    name: 'DEFAULT',
+    value: 'default',
   },
 };
 
@@ -40,9 +44,12 @@ const productsSlice = createSlice({
     },
     setProductFilter(
       state,
-      action: PayloadAction<{ filter: ProductFilters; value: ProductsState['filters'][ProductFilters] }>,
+      action: PayloadAction<{ filter: ProductFiltersValue; value: ProductsState['filters'][ProductFiltersValue] }>,
     ) {
       state.filters = { ...state.filters, [action.payload.filter]: action.payload.value };
+    },
+    setSortingProducts(state, action: PayloadAction<ProductsState['sorting']>) {
+      state.sorting = action.payload;
     },
     resetProductsState() {
       return { ...initialState };

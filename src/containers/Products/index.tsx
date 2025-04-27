@@ -4,6 +4,7 @@ import Stack from '@mui/material/Stack';
 import ProductsList from './ProductsList';
 import ViewToggle from './ViewToggle';
 import Filters from './Filters';
+import Sorting from './Sorting';
 
 const ProductsContainer: FC = (): JSX.Element => {
   return (
@@ -12,6 +13,7 @@ const ProductsContainer: FC = (): JSX.Element => {
 
       <Stack gap={2} flexDirection="column" width="100%">
         <Stack gap={2} justifyContent="flex-end">
+          <Sorting />
           <Filters variant="dialog" />
           <ViewToggle />
         </Stack>

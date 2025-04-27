@@ -10,10 +10,11 @@ const {
   getProductsError,
   setProductsView,
   setProductFilter,
+  setSortingProducts,
   resetProductsState,
 } = productsActions;
 
-export { setProductsView, setProductFilter, resetProductsState };
+export { setProductsView, setProductFilter, setSortingProducts, resetProductsState };
 
 export const getProducts = () => async (dispatch: AppDispatch, getState: () => RootState) => {
   const { isLoading } = getState().products;

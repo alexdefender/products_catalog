@@ -9,6 +9,13 @@
   "FILTER_BY": "Filter by",
   "CATEGORIES": "Categories",
   "PRICES": "Prices",
+  "DEFAULT": "Default",
+  "PRICE_ASC": "Price: Low to High",
+  "PRICE_DESC": "Price: High to Low",
+  "NAME_ASC": "Name: A to Z",
+  "NAME_DESC": "Name: Z to A",
+  "RATING_ASC": "Rating: Low to High",
+  "RATING_DESC": "Rating: High to Low",
   "OK": "Ok",
   "EMPTY_PRODUCTS_LIST": "Nothing found. Change filters or refresh page",
 

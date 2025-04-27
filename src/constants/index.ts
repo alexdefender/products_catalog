@@ -1,4 +1,5 @@
 import { Menu } from '@models/index';
+import { SortingItem } from '@models/product';
 import ROUTES from './routes';
 
 export const MAIN_CONTENT_ID = 'main-content';
@@ -24,3 +25,34 @@ export const HEADER_MENU: Menu = [
 export const DIALOGS = {
   PRODUCTS_FILTERS: 'ProductsFiltersDialog',
 } as const;
+
+export const SORTING_ITEMS: Array<SortingItem> = [
+  {
+    value: 'default',
+    name: 'DEFAULT',
+  },
+  {
+    value: 'price_asc',
+    name: 'PRICE_ASC',
+  },
+  {
+    value: 'price_desc',
+    name: 'PRICE_DESC',
+  },
+  {
+    value: 'name_asc',
+    name: 'NAME_ASC',
+  },
+  {
+    value: 'name_desc',
+    name: 'NAME_DESC',
+  },
+  {
+    value: 'rate_asc',
+    name: 'RATING_ASC',
+  },
+  {
+    value: 'rate_desc',
+    name: 'RATING_DESC',
+  },
+];

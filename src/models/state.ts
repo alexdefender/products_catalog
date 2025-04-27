@@ -1,6 +1,5 @@
 import { PaletteMode } from '@mui/material/styles';
-import { CheckBoxesGroupProps } from '@components';
-import { Product, Products, ProductsView } from './product';
+import { Product, ProductFilters, Products, ProductsView, SortingItem } from './product';
 
 export type LayoutState = {
   mode: PaletteMode;
@@ -12,10 +11,8 @@ export type ProductsState = {
   hasData: boolean;
   error: string;
   view: ProductsView;
-  filters: {
-    categories: CheckBoxesGroupProps['items'];
-    prices: number[];
-  };
+  filters: ProductFilters;
+  sorting: SortingItem;
 };
 
 export type ProductState = {

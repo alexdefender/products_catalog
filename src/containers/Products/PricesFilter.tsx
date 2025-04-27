@@ -1,6 +1,6 @@
 import { FC, Fragment, JSX, useMemo } from 'react';
 
-import useTypedSelector from '@hooks/useTypedSelector';
+import useAppSelector from '@hooks/useAppSelector';
 import useActions from '@hooks/useActions';
 import { RangeSlider } from '@components';
 
@@ -9,7 +9,7 @@ const PricesFilterContainer: FC = (): JSX.Element => {
     list,
     hasData,
     filters: { prices },
-  } = useTypedSelector((state) => state.products);
+  } = useAppSelector((state) => state.products);
   const { setProductFilter } = useActions();
 
   const [min, max] = useMemo(() => {

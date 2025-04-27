@@ -8,6 +8,7 @@ import DialogCustomization from './Dialog';
 import DialogActionsCustomization from './DialogActions';
 import SliderCustomization from './Slider';
 import ButtonCustomization from './Button';
+import SelectCustomization from './Select';
 
 const componentsCustomizations = {
   ...TypographyCustomization,
@@ -20,6 +21,7 @@ const componentsCustomizations = {
   ...DialogActionsCustomization,
   ...SliderCustomization,
   ...ButtonCustomization,
+  ...SelectCustomization,
 };
 
 export default componentsCustomizations;
