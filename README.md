@@ -17,6 +17,8 @@ Create a product catalog application that fetches data from a public API, displa
 - Fetch data from a public API (suggested: https://fakestoreapi.com/)
 - Form validation for checkout process
 
+### Online [https://products-catalog-chi.vercel.app](https://products-catalog-chi.vercel.app)
+
 ### Getting Started
 
 Set NEXT_PUBLIC_API_URL in **.env** file.
