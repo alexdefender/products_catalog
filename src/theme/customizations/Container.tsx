@@ -8,8 +8,8 @@ const ContainerCustomization: Components<Theme> = {
         padding: theme.spacing(10, 2, 2),
         maxWidth: theme.breakpoints.values.lg,
         margin: theme.spacing(0, 'auto'),
-        [theme.breakpoints.up('sm')]: {
-          padding: theme.spacing(10, 3, 3),
+        [theme.breakpoints.up('md')]: {
+          padding: theme.spacing(12, 3, 3),
         },
       }),
     },
