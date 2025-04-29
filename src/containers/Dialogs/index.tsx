@@ -5,7 +5,7 @@ import { Breakpoint } from '@mui/system';
 import { DIALOGS } from '@constants';
 import ProductsFiltersDialog, { ProductsFiltersDialogProps } from './ProductsFiltersDialog';
 import BasketDialog, { BasketDialogProps } from './BasketDialog';
-import OrderSuccessDialog, { OrderSuccessDialogProps } from './OrderSuccessDialog';
+import OrderSuccessDialog from './OrderSuccessDialog';
 import useAppSelector from '@hooks/useAppSelector';
 import useActions from '@hooks/useActions';
 
@@ -18,7 +18,6 @@ const DIALOG_COMPONENTS = {
 export type DialogDataMap = {
   [DIALOGS.PRODUCTS_FILTERS]: Omit<ProductsFiltersDialogProps, 'onClose'>;
   [DIALOGS.BASKET]: Omit<BasketDialogProps, 'onClose'>;
-  [DIALOGS.ORDER_SUCCESS]: Omit<OrderSuccessDialogProps, 'onClose'>;
 };
 
 const MEDIA_SIZE: { [keys: string]: Breakpoint } = {
