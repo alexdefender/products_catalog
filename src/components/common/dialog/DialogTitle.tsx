@@ -12,11 +12,11 @@ type DialogTitleComponentProps = {
 };
 
 const DialogTitleComponent: FC<DialogTitleComponentProps> = ({ title, tValues = {}, color, onClose }): JSX.Element => (
-  <DialogTitle>
+  <DialogTitle >
     {title && (
       <Text component="h2" variant="h5" tid={title} values={tValues} fontWeight={600} align="center" color={color} />
     )}
-    {onClose && <IconButton icon="close" onClick={onClose} sx={{ position: 'absolute', top: 12, right: 12 }} />}
+    {onClose && <IconButton icon="close" onClick={onClose} sx={{ position: 'absolute', top: 4, right: 4 }} />}
   </DialogTitle>
 );
 

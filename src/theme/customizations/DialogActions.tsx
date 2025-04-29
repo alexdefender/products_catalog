@@ -4,7 +4,7 @@ const DialogActionsCustomization: Components<Theme> = {
   MuiDialogActions: {
     styleOverrides: {
       root: ({ theme }) => ({
-        padding: theme.spacing(1.5, 3, 3),
+        padding: theme.spacing(1.5, 2, 2),
         justifyContent: 'center',
         [theme.breakpoints.down('sm')]: {
           gap: theme.spacing(1),

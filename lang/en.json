@@ -29,6 +29,7 @@
   "PHONE_NUMBER": "Phone number",
   "ORDER": "Order",
   "RECIPIENT": "Recipient",
+  "ORDER_SUCCESS": "Your order has been successfully placed",
 
   "VALIDATION_REQUIRED": "Required",
   "VALIDATION_MIN_LENGTH_STR": "Enter more than {{min}} symbols",

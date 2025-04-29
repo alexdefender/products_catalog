@@ -4,9 +4,7 @@ import Box from '@mui/material/Box';
 
 import useAppSelector from '@hooks/useAppSelector';
 import useActions from '@hooks/useActions';
-import { redirect } from '@utils/navigation';
 import { validateCheckout } from '@utils/validation';
-import ROUTES from '@constants/routes';
 import { Button, TextField, Text } from '@components';
 import Basket from './Basket';
 
@@ -22,7 +20,7 @@ const Checkout: FC = (): JSX.Element => {
   const [showValidationErrors, setShowValidationErrors] = useState(false);
   // simulating sending data
   const [isLoading, setIsLoading] = useState(false);
-  const { resetBasketState } = useActions();
+  const { openDialog } = useActions();
 
   const onSubmit = (e: MouseEvent<HTMLFormElement>) => {
     e.preventDefault();
@@ -37,11 +35,11 @@ const Checkout: FC = (): JSX.Element => {
     setIsLoading(true);
     return new Promise((resolve) => {
       setTimeout(() => {
-        redirect(ROUTES.PRODUCTS).then(() => {
-          resetBasketState();
-          resolve(null);
-        });
-      }, 3000);
+        openDialog({ name: 'OrderSuccessDialog' });
+        setIsLoading(false);
+
+        resolve(null);
+      }, 1000);
     });
   };
 

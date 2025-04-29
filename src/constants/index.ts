@@ -26,6 +26,7 @@ export const HEADER_MENU: Menu = [
 export const DIALOGS = {
   PRODUCTS_FILTERS: 'ProductsFiltersDialog',
   BASKET: 'BasketDialog',
+  ORDER_SUCCESS: 'OrderSuccessDialog',
 } as const;
 
 export const SORTING_ITEMS: Array<SortingItem> = [
