@@ -3,6 +3,7 @@ import AppBar from '@mui/material/AppBar';
 import Toolbar from '@mui/material/Toolbar';
 import { Menu } from '@models';
 
+import Logo from '../common/Logo';
 import HeaderMenu from './HeaderMenu';
 import HeaderMobileMenu from './HeaderMenu/MobileMenu';
 
@@ -15,6 +16,7 @@ type HeaderProps = {
 const Header: FC<HeaderProps> = ({ menu, renderThemeToggle, renderBasket }): JSX.Element => (
   <AppBar>
     <Toolbar>
+      <Logo />
       <HeaderMenu menu={menu} />
       {renderThemeToggle}
       {renderBasket}
