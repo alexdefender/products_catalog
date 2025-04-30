@@ -1,5 +1,5 @@
 ### Overview
-Create a product catalog application that fetches data from a public API, displays products in a responsive grid, allows filtering/sorting, and has a product detail page.
+The product catalog application that fetches data from a public API, displays products in a responsive grid, allows filtering/sorting, and has a product detail page.
 
 ### Core Features
 
@@ -14,7 +14,7 @@ Create a product catalog application that fetches data from a public API, displa
 ### Technical Requirements
 
 - TypeScript, React, Next.js, Redux
-- Fetch data from a public API (suggested: https://fakestoreapi.com/)
+- Fetch data from a public API (https://fakestoreapi.com/)
 - Form validation for checkout process
 
 ### Online [https://products-catalog-chi.vercel.app](https://products-catalog-chi.vercel.app)
