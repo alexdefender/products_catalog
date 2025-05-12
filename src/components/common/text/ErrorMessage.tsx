@@ -10,7 +10,7 @@ export type ErrorMessageProps = {
 const ErrorMessage: FC<ErrorMessageProps> = ({ error, ...props }): JSX.Element => {
   const theme = useTheme();
 
-  return <Text {...props} tid={error || 'ERROR_OCCURRED'} color={theme.palette.error.main} />;
+  return <Text {...props} tid={error || 'ERROR_OCCURRED'} component="div" color={theme.palette.error.main} />;
 };
 
 export default ErrorMessage;

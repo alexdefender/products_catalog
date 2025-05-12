@@ -8,6 +8,7 @@ import SafeText from '../common/text/SafeText';
 import Text from '../common/text/Text';
 import Loader from './Loader';
 import BasketButton from '../common/buttons/BasketButton';
+import ErrorMessage from '../common/text/ErrorMessage';
 
 const ImagWrap = styled('div')(({ theme }) => ({
   display: 'flex',
@@ -27,11 +28,16 @@ const Image = styled('img')({
 type ProductDetailsProps = {
   product: Product;
   isLoading: boolean;
+  error: string;
   onAddToBasket: (product: Product) => void;
 };
 
-const ProductDetails: FC<ProductDetailsProps> = ({ product, isLoading, onAddToBasket }): JSX.Element => {
+const ProductDetails: FC<ProductDetailsProps> = ({ product, isLoading, error, onAddToBasket }): JSX.Element => {
   const theme = useTheme();
+
+  if (error) {
+    return <ErrorMessage textAlign="center" my={5} />;
+  }
 
   if (isLoading) {
     return <Loader />;

@@ -6,7 +6,7 @@ import useActions from '@hooks/useActions';
 import { ProductDetails } from '@components';
 
 const ProductDetailsContainer: FC = (): JSX.Element => {
-  const { data, isLoading, hasData } = useAppSelector((state) => state.product);
+  const { data, isLoading, hasData, error } = useAppSelector((state) => state.product);
   const { getProduct, resetProductState, addBasketItem } = useActions();
   const params = useParams();
 
@@ -18,7 +18,9 @@ const ProductDetailsContainer: FC = (): JSX.Element => {
     };
   }, [hasData, params?.id]);
 
-  return <ProductDetails product={data} isLoading={!hasData || isLoading} onAddToBasket={addBasketItem} />;
+  return (
+    <ProductDetails product={data} isLoading={!hasData || isLoading} error={error} onAddToBasket={addBasketItem} />
+  );
 };
 
 export default ProductDetailsContainer;

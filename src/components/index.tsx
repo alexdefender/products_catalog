@@ -19,3 +19,4 @@ export { default as RangeSlider } from './controls/RangeSlider';
 export type { RangeSliderProps } from './controls/RangeSlider';
 export { default as Select } from './controls/Select';
 export { default as TextField } from './controls/TextField';
+export { default as ControlsLoader } from './controls/common/ControlsLoader';

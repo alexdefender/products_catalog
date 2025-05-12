@@ -6,7 +6,7 @@ import { getFilteredProductsList, getSortedProductsList } from '@utils/product';
 import { ProductsList } from '@components';
 
 const ProductsListContainer: FC = (): JSX.Element => {
-  const { list, isLoading, hasData, view, filters, sorting } = useAppSelector((state) => state.products);
+  const { list, isLoading, hasData, error, view, filters, sorting } = useAppSelector((state) => state.products);
   const { getProducts, addBasketItem } = useActions();
 
   useEffect(() => {
@@ -21,7 +21,13 @@ const ProductsListContainer: FC = (): JSX.Element => {
   }, [list, filters, sorting]);
 
   return (
-    <ProductsList list={correctList} view={view} isLoading={!hasData || isLoading} onAddToBasket={addBasketItem} />
+    <ProductsList
+      list={correctList}
+      view={view}
+      isLoading={!hasData || isLoading}
+      error={error}
+      onAddToBasket={addBasketItem}
+    />
   );
 };
 

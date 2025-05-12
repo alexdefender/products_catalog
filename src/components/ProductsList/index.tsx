@@ -8,14 +8,16 @@ import GridItem, { ProductItemProps } from './GridItem';
 import ListItem from './ListItem';
 import Loader from './Loader';
 import Text from '../common/text/Text';
+import ErrorMessage from '../common/text/ErrorMessage';
 
 type ProductsListProps = {
   list: Products;
   view: ProductsView;
   isLoading: boolean;
+  error: string;
 } & Pick<ProductItemProps, 'onAddToBasket'>;
 
-const ProductsList: FC<ProductsListProps> = ({ list = [], view, isLoading, onAddToBasket }): JSX.Element => {
+const ProductsList: FC<ProductsListProps> = ({ list = [], view, isLoading, error, onAddToBasket }): JSX.Element => {
   const isEmpty = list.length === 0;
   const ItemComponent = useMemo(() => (view === 'list' ? ListItem : GridItem), [view]);
 
@@ -35,6 +37,10 @@ const ProductsList: FC<ProductsListProps> = ({ list = [], view, isLoading, onAdd
     },
     [],
   );
+
+  if (error) {
+    return <ErrorMessage textAlign="center" my={5} />;
+  }
 
   if (isLoading) {
     return <Loader />;

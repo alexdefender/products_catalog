@@ -3,12 +3,13 @@ import { FC, Fragment, JSX, useMemo } from 'react';
 import useAppSelector from '@hooks/useAppSelector';
 import useActions from '@hooks/useActions';
 import { Value } from '@models';
-import { CheckBoxesGroup } from '@components';
+import { CheckBoxesGroup, ControlsLoader } from '@components';
 
 const CategoriesFilter: FC = (): JSX.Element => {
   const {
     list,
     hasData,
+    isLoading,
     filters: { categories },
   } = useAppSelector((state) => state.products);
   const { setProductFilter } = useActions();
@@ -18,6 +19,10 @@ const CategoriesFilter: FC = (): JSX.Element => {
     const unique = [...new Set(categories)];
     return unique.map((c) => ({ name: c, value: c }));
   }, [list]);
+
+  if (isLoading) {
+    return <ControlsLoader />;
+  }
 
   if (!hasData) {
     return <Fragment />;

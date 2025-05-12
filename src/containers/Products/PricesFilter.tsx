@@ -2,12 +2,13 @@ import { FC, Fragment, JSX, useMemo } from 'react';
 
 import useAppSelector from '@hooks/useAppSelector';
 import useActions from '@hooks/useActions';
-import { RangeSlider } from '@components';
+import { RangeSlider, ControlsLoader } from '@components';
 
 const PricesFilterContainer: FC = (): JSX.Element => {
   const {
     list,
     hasData,
+    isLoading,
     filters: { prices },
   } = useAppSelector((state) => state.products);
   const { setProductFilter } = useActions();
@@ -18,6 +19,10 @@ const PricesFilterContainer: FC = (): JSX.Element => {
     const max = Math.max(...prices);
     return [min, max];
   }, [list]);
+
+  if (isLoading) {
+    return <ControlsLoader />;
+  }
 
   if (!hasData) {
     return <Fragment />;
